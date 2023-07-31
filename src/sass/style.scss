@@ -1,0 +1,178 @@
+@use "./colors" as *;
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+body {
+	font-family: "Montserrat", sans-serif;
+	background-color: #333;
+	font-size: 1.6rem;
+}
+.nav {
+	display: none;
+	height: 8rem;
+	width: 100%;
+	justify-content: space-evenly;
+	background-color: $light;
+	&__brand {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+    &__logo {
+     width: 4rem;
+     height: 4rem;   
+    }
+    &__title {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+	&__links {
+		display: flex;
+		justify-content: space-around;
+		line-height: 8rem;
+	}
+	&__link {
+		padding: 0 1em;
+		height: 100%;
+		color: $dark;
+		text-decoration: none;
+        transition: background-color .3s, color .3s;
+
+		&:hover {
+			color: $light;
+			background-color: $dark;
+		}
+	}
+}
+.mobile-nav {
+	height: 8rem;
+	width: 100%;
+	background-color: $light;
+	&__panel {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__brand {
+		margin: 0 1rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	&__burger-menu {
+		margin: 0 0.5rem;
+		padding: 2rem;
+	}
+	&__title {
+		font-size: 3rem;
+		font-weight: 300;
+	}
+	&__logo {
+		height: 3rem;
+		width: 3rem;
+	}
+	&__burger {
+		height: 4rem;
+		width: 4rem;
+		cursor: pointer;
+		transition: transform 0.3s;
+		&:hover {
+			transform: scale(0.9);
+		}
+	}
+
+	&__links {
+		display: none;
+		flex-direction: column;
+		background-color: $light;
+	}
+
+	&__link {
+		font-size: 2rem;
+		color: $dark;
+		text-decoration: none;
+		padding: 0.5em 0;
+		width: 100%;
+		text-align: center;
+		transition: background-color 0.3s, color 0.3s;
+		&:last-child {
+			padding-bottom: 0.6em;
+		}
+		&:hover {
+			background-color: $dark;
+			color: $light;
+		}
+	}
+	&__button {
+		border: none;
+		background: none;
+	}
+}
+
+.active {
+	display: flex;
+}
+.animation-show {
+	animation: show 0.5s forwards;
+}
+.animation-hide {
+	animation: hide 0.5s forwards;
+}
+@keyframes show {
+	from {
+		transform: translateY(-100px);
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes hide {
+	from {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+}
+@media (min-width: 768px) {
+	.mobile-nav {
+		height: 11rem;
+
+		&__title {
+			font-size: 4rem;
+		}
+		&__logo {
+			height: 4.5rem;
+			width: 4.5rem;
+		}
+		&__burger {
+			height: 5rem;
+			width: 5rem;
+		}
+		&__link {
+			font-size: 3rem;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.mobile-nav {
+		display: none;
+	}
+	.nav {
+		display: flex;
+	}
+}
