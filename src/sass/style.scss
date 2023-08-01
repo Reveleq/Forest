@@ -11,8 +11,13 @@ html {
 }
 body {
 	font-family: "Montserrat", sans-serif;
-	background-color: #333;
+	background-color: $light;
 	font-size: 1.6rem;
+}
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
 }
 .nav {
 	display: none;
@@ -25,14 +30,14 @@ body {
 		justify-content: center;
 		align-items: center;
 	}
-    &__logo {
-     width: 4rem;
-     height: 4rem;   
-    }
-    &__title {
-        font-size: 3rem;
-        font-weight: 300;
-    }
+	&__logo {
+		width: 4rem;
+		height: 4rem;
+	}
+	&__title {
+		font-size: 3rem;
+		font-weight: 300;
+	}
 	&__links {
 		display: flex;
 		justify-content: space-around;
@@ -43,7 +48,7 @@ body {
 		height: 100%;
 		color: $dark;
 		text-decoration: none;
-        transition: background-color .3s, color .3s;
+		transition: background-color 0.3s, color 0.3s;
 
 		&:hover {
 			color: $light;
@@ -128,6 +133,62 @@ body {
 .animation-hide {
 	animation: hide 0.5s forwards;
 }
+.hero-place {
+	&__img {
+		position: relative;
+		height: 35rem;
+		background-image: url("/dist/img/hero-small.jpg");
+		background-size: cover;
+		background-position: center;
+		z-index: -1;
+	}
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -11;
+	}
+	&__text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $light;
+		z-index: 100;
+	}
+	&__h3 {
+		font-size: 1.3em;
+		font-weight: 300;
+	}
+	&__h1 {
+		font-size: 1.5em;
+	}
+}
+.about-us {
+	width: 100%;
+	&__title {
+		text-align: center;
+		margin: 4rem 0;
+		font-weight: 300;
+		font-size: 3rem;
+	}
+	&__box {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	&__box-header {
+		font-size: 2.3rem;
+		text-align: center;
+		padding-bottom: 0.5em;
+	}
+	&__box-text {
+		margin: 0 2em 1em;
+	}
+	&__img {
+		display: none;
+	}
+}
 @keyframes show {
 	from {
 		transform: translateY(-100px);
@@ -167,6 +228,50 @@ body {
 			font-size: 3rem;
 		}
 	}
+	.hero-place {
+		&__h3 {
+			font-size: 1.5em;
+			font-weight: 300;
+		}
+		&__h1 {
+			font-size: 2em;
+		}
+	}
+	.about-us {
+		&__title {
+			margin: 4rem 0 3rem;
+			font-weight: 300;
+			font-size: 2em;
+		}
+		&__box {
+			margin: 0 2em;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		&__box-header {
+			font-size: 2rem;
+			margin-left: 1.6em;
+		}
+
+		&__box-text {
+			margin: 0 2em 1em;
+			font-size: 1.6rem;
+		}
+		&__text {
+			display: flex;
+			flex-direction: column;
+			justify-content: start;
+			align-items: flex-start;
+		}
+		&__img {
+			display: inline-block;
+			margin-left: 1em;
+			height: 20rem;
+			margin: 0 auto;
+		}
+	}
 }
 @media (min-width: 992px) {
 	.mobile-nav {
@@ -174,5 +279,44 @@ body {
 	}
 	.nav {
 		display: flex;
+	}
+	.hero-place {
+		&__text {
+			left: 45%;
+			margin-left: 1em;
+		}
+		&__img {
+			background-image: url("/dist/img/hero-big.jpg");
+			height: 40rem;
+			z-index: 0;
+		}
+		&__h3 {
+			font-size: 2.8rem;
+			font-weight: 300;
+		}
+		&__h1 {
+			font-size: 3.5rem;
+		}
+	}
+	.about-us {
+		&__title {
+			font-size: 2.5em;
+		}
+
+		&__box-header {
+			font-size: 2.5rem;
+		}
+		&__box {
+			align-items: flex-start;
+		}
+		&__box-text {
+			font-size: 2rem;
+			margin-left: 2em;
+			line-height: 1.5em;
+		}
+		&__img {
+			height: 35rem;
+			margin-right: 2em;
+		}
 	}
 }
