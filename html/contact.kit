@@ -8,7 +8,85 @@
 </head>
 <body>
    <header class="header">
-    <!-- @include 'nav.kit' -->
+    <nav class="nav">
+				
+    <a href="index.html">
+        <div class="nav__brand">
+    <img
+        src="/dist/img/icon/logo.svg"
+        alt="logo choinka"
+        class="nav__logo"
+    />
+    <h3 class="nav__title">Forest</h3>
+    </div>
+    </a>
+
+<div class="nav__links">
+    <a
+        class="nav__link"
+        href="index.html"
+        >Home</a
+    >
+    <a
+        class="nav__link"
+        href="index.html#about-us"
+        >O nas</a
+    >
+    <a
+        class="nav__link"
+        href="index.html#oferta"
+        >Oferta</a
+    >
+    <a
+        class="nav__link"
+        href="#"
+        >Kontakt</a
+    >
+</div>
+</nav>
+<nav class="mobile-nav">
+<div class="mobile-nav__panel">
+    <div class="mobile-nav__brand">
+        <a href="index.html" class="mobile-nav__btn">
+        <img
+            src="/dist/img/icon/logo.svg"
+            alt="logo choinka"
+            class="mobile-nav__logo"
+        
+        />
+        <h3 class="mobile-nav__title">Forest</h3>
+        </a>
+    </div>
+    <div class="mobile-nav__burger-menu">
+        <button class="mobile-nav__button">
+            <img
+                src="/dist/img/icon/menu-2.svg"
+                alt=""
+                class="mobile-nav__burger"
+            />
+        </button>
+    </div>
+</div>
+<div class="mobile-nav__links">
+    <a
+        class="mobile-nav__link"
+        href="index.html"
+        >Home</a
+    ><a
+        class="mobile-nav__link"
+        href="index.html#about-us"
+        >O nas</a
+    ><a
+        class="mobile-nav__link"
+        href="index.html#oferta"
+        >Oferta</a
+    ><a
+        class="mobile-nav__link"
+        href="#"
+        >Kontakt</a
+    >
+</div>
+</nav> 
     <!-- @include 'first-hero.kit' -->
    </header>
    <main class="main">
@@ -21,23 +99,25 @@
 
     <label for="name" class="contact__label">Imię i nazwisko:</label>
     <input id="name" type="text" class="contact__input">
-    <p class="contact__name-error error-alert"></p>
+    <p class="contact__name-error error-alert">error</p>
     <label for="email" class="contact__label">E-mail:</label>
     <input id="email" class="contact__input"type="email" >
     
-    <p class="contact__email-error error-alert"></p>
+    <p class="contact__email-error error-alert">error</p>
     <label for="msg" class="contact__label">Wiadomość:</label>
     <textarea id="msg" cols="30" rows="10" class="contact__textarea" placeholder="Wpisz wiadomość"></textarea>
-    <p class="contact__msg-error error-alert"></p>
+    <p class="contact__msg-error error-alert">error</p>
     <button class="contact__btn">Wyślij</button>
    
 </form>    
 </div>
 </div><div class="contact__iframe-box"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3620.334595440941!2d19.896339752258253!3d50.08697693146418!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sMcDonald&#39;s!5e0!3m2!1sen!2spl!4v1692195096624!5m2!1sen!2spl" class="contact__iframe" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+    </div>
 </section>
 </main>
 <!-- @include 'footer.kit' -->
    <script src="/dist/js/main.min.js"></script>
+<script src="/dist/js/contact.min.js"></script>
 </body>
 </html>
