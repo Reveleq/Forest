@@ -23,6 +23,7 @@ body {
 	width: 100%;
 	justify-content: space-evenly;
 	background-color: $light;
+	transition: background-color .3s;
 	z-index: 10;
 	&__btn {
 		display: flex;
@@ -35,12 +36,13 @@ body {
 		align-items: center;
 	}
 	&__logo {
-		width: 4rem;
-		height: 4rem;
+		width: 3rem;
+		height: 3rem;
 	}
 	&__title {
 		font-size: 3rem;
-		font-weight: 300;
+		color: $dark;
+		font-weight: 400;
 	}
 	&__links {
 		display: flex;
@@ -184,7 +186,7 @@ body {
 	&__box-header {
 		font-size: 2.3rem;
 		text-align: center;
-		padding-bottom: 0.5em;
+		padding-bottom: 0.3em;
 	}
 	&__box-text {
 		display: block;
@@ -292,6 +294,7 @@ body {
 		font-size: 1.7rem;
 		background: none;
 		border: none;
+		color: $dark;
 		border-radius: 5px;
 		box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
 		transition: background-color 0.3s, color 0.3s;
@@ -301,7 +304,8 @@ body {
 			margin: 3rem auto 0;
 			height: 4rem;
 			width: 20rem;
-			font-size: 1.5rem;
+			font-size: 1.7rem;
+			color: $dark;
 			background-color: $check;
 			border: none;
 			border-radius: 5px;
@@ -389,6 +393,7 @@ body {
 		margin: 3rem 0;
 
 		background-color: $check;
+		color: $dark;
 		border: none;
 		height: 3rem;
 		border-radius: 5px;
@@ -489,6 +494,7 @@ body {
 				font-weight: 200;
 				width: 14rem;
 				border: none;
+				color: $dark;
 				background-color: $light;
 				border-radius: 5px;
 				transition: background-color 0.3s, color 0.3s;
@@ -562,6 +568,7 @@ body {
 			font-weight: 200;
 			width: 14rem;
 			border: none;
+			color: $dark;
 			background-color: $light;
 			border-radius: 5px;
 			transition: background-color 0.3s, color 0.3s;
@@ -598,17 +605,23 @@ body {
 		justify-content: space-evenly;
 		align-items: center;
 		margin-bottom: 3rem;
+		&-logo{
+			height: 3rem;
+		}
 		&-brand {
 			display: flex;
 			align-items: center;
 			margin-top: 0.8em;
 
-			font-size: 3rem;
+			font-size: 3.6rem;
 			font-weight: 400;
-			img {
-				height: 2.5rem;
-			}
+			
 		}
+	}
+	&__border{
+		width: 100%;
+		height: .1rem;
+		background-color: $dark;
 	}
 	&__links {
 		display: flex;
@@ -625,7 +638,7 @@ body {
 			margin-bottom: 1rem;
 			text-align: center;
 			font-size: 2rem;
-			font-weight: 400;
+			font-weight: bold;
 		}
 	}
 	&__link {
@@ -635,19 +648,10 @@ body {
 		margin: 0.5rem 0;
 		font-weight: 300;
 		text-align: center;
+		transition: color .3s;
 		cursor: pointer;
-		&::before {
-			position: absolute;
-			bottom: -0.3rem;
-			left: 0;
-			height: 1px;
-			width: 0;
-			background-color: $dark;
-			content: "";
-			transition: width 0.3s;
-		}
-		&:hover::before {
-			width: 100%;
+		&:hover{
+			color: $unlist;
 		}
 	}
 	&__year {
@@ -655,7 +659,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		padding: 1em 0;
-		border-top: 1px solid #000;
+		
 		font-weight: 300;
 	}
 }
@@ -721,6 +725,7 @@ body {
 		&__text {
 			padding-top: 0.3rem;
 			padding-left: 1.6em;
+			
 		}
 		&__box-header {
 			font-size: 2rem;
@@ -728,6 +733,7 @@ body {
 
 		&__box-text {
 			font-size: 1.6rem;
+			margin: 0;
 		}
 		&__text {
 			display: flex;
@@ -738,7 +744,7 @@ body {
 		&__img {
 			display: inline-block;
 			margin-left: 1em;
-			height: 30rem;
+			height: 25rem;
 			margin: 0 auto;
 		}
 	}
@@ -790,7 +796,7 @@ body {
 	}
 	.contact {
 		&__title {
-			font-size: 2.8rem;
+			font-size: 3rem;
 		}
 		&__label {
 			font-size: 2rem;
@@ -845,13 +851,31 @@ body {
 	.footer {
 		&__box {
 			flex-direction: row;
+			&-logo{
+				height: 4.6rem;
+				margin-right: .59rem;
+			}
+			&-brand{
+				font-size: 4.1rem;
+			}
+
 		}
 		&__links {
 			flex-direction: row;
+			&-category{
+			align-items: flex-start;
+			}
+		}
+		
+	}
+}
+@media (min-width: 820px){
+	.about-us{
+		&__img{
+			height: 30rem;
 		}
 	}
 }
-
 @media (min-width: 992px) {
 	html {
 		scroll-padding-top: 9rem;
@@ -871,10 +895,9 @@ body {
 		&__img {
 			background-image: url("/dist/img/hero-big.jpg");
 			height: 40rem;
-			z-index: 0;
 		}
 		&__h3 {
-			font-size: 2.8rem;
+			font-size: 2.5rem;
 			font-weight: 300;
 		}
 		&__h1 {
@@ -883,50 +906,22 @@ body {
 	}
 	.about-us {
 		&__title {
-			font-size: 2.5em;
+			font-size: 3rem;
 		}
 
 		&__box-header {
-			font-size: 2.5rem;
-		}
-	}
-	.hero-place {
-		&__text {
-			left: 45%;
-			margin-left: 1em;
-		}
-		&__img {
-			background-image: url("/dist/img/hero-big.jpg");
-			height: 40rem;
-			z-index: 0;
-		}
-		&__h3 {
-			font-size: 2.8rem;
-			font-weight: 300;
-		}
-		&__h1 {
-			font-size: 3.5rem;
-		}
-	}
-	.about-us {
-		&__title {
-			font-size: 2.5em;
-		}
-
-		&__box-header {
-			font-size: 2.5rem;
+			font-size: 2.3rem;
 		}
 		&__box {
 			align-items: flex-start;
 		}
 		&__box-text {
 			font-size: 1.6rem;
-			margin-left: 2em;
 			line-height: 1.5em;
 		}
 		&__img {
+			padding-top: 1rem; 
 			height: 35rem;
-			margin-right: 2em;
 		}
 	}
 	.second-hero__header {

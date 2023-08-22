@@ -41,7 +41,7 @@ const showCardThree = () => {
 };
 const hideCardThree = () => {
 	secondSideThree.classList.remove("second-side-show");
-	firstSideThree.classList.remove("first-side-show");Three
+	firstSideThree.classList.remove("first-side-show");
 }
 const showCardFour = () => {
 	secondSideFour.classList.add("second-side-show");
