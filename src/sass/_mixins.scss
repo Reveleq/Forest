@@ -12,3 +12,21 @@
 		background-color: rgba(0, 0, 0, 0.7);
 		z-index: -5;
 }  
+@mixin hero-img{
+		position: relative;
+		background-position: center;
+		background-size: cover;
+		z-index: 0;
+	
+}
+@mixin btn {
+			display: block;	
+			width: 20rem;
+			height: 4rem;
+			font-size: 1.7rem;
+			color: $dark;
+			border: none;
+			border-radius: 5px;
+			transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+			cursor: pointer;
+}

@@ -13,15 +13,15 @@ html {
 }
 body {
 	font-family: "Montserrat", sans-serif;
-	background-color: $light;
 	font-size: 1.6rem;
+	background-color: $light;
 }
 
 .nav {
 	display: none;
+	justify-content: space-evenly;
 	height: 8rem;
 	width: 100%;
-	justify-content: space-evenly;
 	background-color: $light;
 	transition: background-color .3s;
 	z-index: 10;
@@ -41,8 +41,8 @@ body {
 	}
 	&__title {
 		font-size: 3rem;
-		color: $dark;
 		font-weight: 400;
+		color: $dark;
 	}
 	&__links {
 		display: flex;
@@ -75,15 +75,15 @@ body {
 		text-decoration: none;
 	}
 	&__panel {
-		width: 100%;
-		height: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		width: 100%;
+		height: 100%;
 	}
 	&__brand {
-		margin: 0 1rem;
 		display: flex;
+		margin: 0 1rem;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
@@ -93,18 +93,18 @@ body {
 		padding: 2rem;
 	}
 	&__title {
-		color: $dark;
-		text-decoration: none;
 		font-size: 3.5rem;
 		font-weight: 400;
+		color: $dark;
+		text-decoration: none;
 	}
 	&__logo {
-		height: 2.9rem;
 		width: 2.9rem;
+		height: 2.9rem;
 	}
 	&__burger {
-		height: 4rem;
 		width: 4rem;
+		height: 4rem;
 		cursor: pointer;
 		transition: transform 0.3s;
 		&:hover {
@@ -114,20 +114,20 @@ body {
 
 	&__links {
 		display: flex;
-		height: 0;
 		flex-direction: column;
+		height: 0;
 		background-color: $light;
 		transition: height 0.3s, background-color 0.3s;
 		overflow: hidden;
 	}
 
 	&__link {
-		font-size: 2rem;
-		color: $dark;
-		text-decoration: none;
 		padding: 0.5em 0;
 		width: 100%;
+		font-size: 2rem;
+		color: $dark;
 		text-align: center;
+		text-decoration: none;
 		transition: background-color 0.3s, color 0.3s;
 		&:last-child {
 			padding-bottom: 0.6em;
@@ -146,12 +146,9 @@ body {
 	padding-top: 8rem;
 	transition: padding 0.3s;
 	&__img {
-		position: relative;
+		@include hero-img;
 		height: 35rem;
 		background-image: url("/dist/img/hero-small.jpg");
-		background-size: cover;
-		background-position: center;
-		z-index: 0;
 	}
 	&__bg {
 		@include bg;
@@ -160,8 +157,8 @@ body {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
 		color: $light;
+		transform: translate(-50%, -50%);
 		z-index: 100;
 	}
 	&__h3 {
@@ -174,8 +171,8 @@ body {
 }
 
 .about-us {
-	width: 100%;
 	margin-bottom: 3em;
+	width: 100%;
 	&__title {
 		@include title;
 	}
@@ -184,29 +181,27 @@ body {
 		flex-direction: column;
 	}
 	&__box-header {
+		padding-bottom: 0.3em;
 		font-size: 2.3rem;
 		text-align: center;
-		padding-bottom: 0.3em;
 	}
 	&__box-text {
 		display: block;
-		max-width: 300px;
 		margin: 0 auto 1em;
+		max-width: 300px;
 	}
 	&__img {
 		display: block;
-		height: 20rem;
 		margin: 1rem auto 2rem;
+		height: 20rem;
 	}
 }
 
 .second-hero {
 	&__img {
-		position: relative;
+		@include hero-img;
 		height: 30rem;
 		background-image: url("/dist/img/second-hero-small.jpg");
-		background-position: center;
-		background-size: cover;
 		z-index: 0;
 	}
 	&__bg {
@@ -214,19 +209,19 @@ body {
 		background-color: rgba(0, 0, 0, 0.5);
 	}
 	&__text {
-		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		height: 100%;
 	}
 	&__header {
-		color: $light;
-		text-align: center;
+		margin: 0 4rem;
 		padding: 1.5rem 2rem;
 		font-size: 2.8rem;
-		border: 1px solid $light;
+		text-align: center;
 		font-weight: 400;
-		margin: 0 4rem;
+		color: $light;
+		border: 1px solid $light;
 	}
 }
 .offer {
@@ -251,59 +246,58 @@ body {
 		width: 30rem;
 		border-radius: 5px;
 		box-shadow: 0px 0px 5px 0px rgb(125, 125, 128);
-	}
-	&__card-title {
-		margin-top: 2rem;
-		font-size: 2.5rem;
-		font-weight: 400;
-		text-align: center;
-	}
-	&__card-prize {
-		margin: 1rem;
-		text-align: center;
-		font-size: 3.5rem;
-		font-weight: bold;
-	}
-	&__card-list {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		margin-top: 3rem;
-		list-style: none;
-		color: $unlist;
-	}
-	&__card-li {
-		margin-top: 0.5rem;
-		margin-bottom: 0.5rem;
-		margin-left: 5.5rem;
-	}
-	&__card-minus {
-		margin-right: 1rem;
-		height: 1rem;
-	}
-	&__card-check {
-		margin-right: 1.5rem;
-		height: 1rem;
-	}
-	&__card-btn {
-		display: block;
-		margin: 3rem auto 0;
-		height: 4rem;
-		width: 20rem;
-		font-size: 1.7rem;
-		background: none;
-		border: none;
-		color: $dark;
-		border-radius: 5px;
-		box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
-		transition: background-color 0.3s, color 0.3s;
-		cursor: pointer;
-		&--special {
+		&-title {
+			margin-top: 2rem;
+			font-size: 2.5rem;
+			font-weight: 400;
+			text-align: center;
+		}
+		&-prize {
+			margin: 1rem;
+			text-align: center;
+			font-size: 3.5rem;
+			font-weight: bold;
+		}
+		&-list {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			margin-top: 3rem;
+			list-style: none;
+			color: $unlist;
+		}
+		&-li {
+			margin-top: 0.5rem;
+			margin-left: 5.5rem;
+			margin-bottom: 0.5rem;
+		}
+		&-minus {
+			margin-right: 1rem;
+			height: 1rem;
+		}
+		&-check {
+			margin-right: 1.5rem;
+			height: 1rem;
+		}
+		&-btn {
 			display: block;
 			margin: 3rem auto 0;
-			height: 4rem;
 			width: 20rem;
+			height: 4rem;
+			font-size: 1.7rem;
+			color: $dark;
+			border: none;
+			background: none;
+			border-radius: 5px;
+			box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
+			transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+			cursor: pointer;
+			&--special {
+			display: block;
+			margin: 3rem auto 0;
+			width: 20rem;
+			height: 4rem;
 			font-size: 1.7rem;
 			color: $dark;
 			background-color: $check;
@@ -312,15 +306,16 @@ body {
 			box-shadow: 0px 5px 17px 0px rgba(49, 203, 83, 1);
 			transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 			cursor: pointer;
+				&:hover {
+					background-color: $dark;
+					color: $light;
+					box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
+				}
+			}
 			&:hover {
 				background-color: $dark;
 				color: $light;
-				box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
 			}
-		}
-		&:hover {
-			background-color: $dark;
-			color: $light;
 		}
 	}
 	&__more-btn {
@@ -370,34 +365,33 @@ body {
 		margin: 0 auto;
 		height: 3rem;
 		width: 100%;
-		border: none;
-		background-color: $footer;
-		color: #333;
-		border-radius: 5px;
 		font-size: 1.7rem;
 		text-align: center;
+		color: $dark-grey;
+		background-color: $footer;
+		border: none;
+		border-radius: 5px;
 	}
 	&__textarea {
 		padding: 1rem;
-		border-radius: 5px;
-		border: none;
-		background-color: $footer;
-		font-size: 1.7rem;
+		height: 200px;
 		min-width: 100%;
 		max-width: 100%;
-		height: 200px;
 		min-height: 200px;
 		max-height: 200px;
+		font-size: 1.7rem;
+		background-color: $footer;
+		border: none;
+		border-radius: 5px;
 	}
 	&__btn {
 		margin: 3rem 0;
-
-		background-color: $check;
-		color: $dark;
-		border: none;
 		height: 3rem;
-		border-radius: 5px;
 		font-size: 1.7rem;
+		color: $dark;
+		background-color: $check;
+		border: none;
+		border-radius: 5px;
 		transition: background-color 0.3s, color 0.3s;
 		cursor: pointer;
 		&:hover {
@@ -450,9 +444,6 @@ body {
 		border-radius: 15px;
 		background-color: $footer;
 		overflow: hidden;
-		// background-image: url('/dist/img/trees-3822149_640.jpg');
-		// background-position: center;
-
 		&-first-side {
 			transition: 0.5s;
 		}
@@ -538,12 +529,12 @@ body {
 		}
 		&-ul-box {
 			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 60%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			bottom: 0;
+			width: 100%;
+			height: 60%;
 			align-items: center;
 			line-height: 3rem;
 		}
@@ -557,19 +548,19 @@ body {
 			list-style: none;
 		}
 		&-li {
-			color: $dark;
 			font-size: 1.8rem;
+			color: $dark;
 			z-index: 10;
 		}
 		&-btn {
 			margin-top: 2rem;
+			width: 14rem;
 			height: 4rem;
 			font-size: 1.7rem;
 			font-weight: 200;
-			width: 14rem;
-			border: none;
 			color: $dark;
 			background-color: $light;
+			border: none;
 			border-radius: 5px;
 			transition: background-color 0.3s, color 0.3s;
 			cursor: pointer;
@@ -612,7 +603,6 @@ body {
 			display: flex;
 			align-items: center;
 			margin-top: 0.8em;
-
 			font-size: 3.6rem;
 			font-weight: 400;
 			
@@ -636,17 +626,17 @@ body {
 		&-header {
 			margin-top: 2em;
 			margin-bottom: 1rem;
-			text-align: center;
 			font-size: 2rem;
 			font-weight: bold;
+			text-align: center;
 		}
 	}
 	&__link {
 		position: relative;
-		color: $dark;
-		text-decoration: none;
 		margin: 0.5rem 0;
 		font-weight: 300;
+		color: $dark;
+		text-decoration: none;
 		text-align: center;
 		transition: color .3s;
 		cursor: pointer;
@@ -656,10 +646,9 @@ body {
 	}
 	&__year {
 		display: flex;
+		padding: 1em 0;
 		justify-content: center;
 		align-items: center;
-		padding: 1em 0;
-		
 		font-weight: 300;
 	}
 }
@@ -671,6 +660,9 @@ body {
 }
 .shadow {
 	background-color: $footer;
+}
+.dark-color{
+	background-color: $dark;
 }
 @media (min-width: 768px) {
 	html {
@@ -689,12 +681,12 @@ body {
 			font-size: 4rem;
 		}
 		&__logo {
-			height: 4.5rem;
 			width: 4.5rem;
+			height: 4.5rem;
 		}
 		&__burger {
-			height: 5rem;
 			width: 5rem;
+			height: 5rem;
 		}
 		&__link {
 			font-size: 3rem;
@@ -712,12 +704,12 @@ body {
 	.about-us {
 		&__title {
 			margin: 4rem 0 3rem;
-			font-weight: 300;
 			font-size: 2em;
+			font-weight: 300;
 		}
 		&__box {
-			margin: 0 2em;
 			display: flex;
+			margin: 0 2em;
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
@@ -732,8 +724,8 @@ body {
 		}
 
 		&__box-text {
-			font-size: 1.6rem;
 			margin: 0;
+			font-size: 1.6rem;
 		}
 		&__text {
 			display: flex;
@@ -745,12 +737,11 @@ body {
 			display: inline-block;
 			margin-left: 1em;
 			height: 25rem;
-			margin: 0 auto;
 		}
 	}
 	.second-hero__header {
-		font-size: 3.2rem;
 		padding: 3rem 5rem;
+		font-size: 3.2rem;
 		font-weight: 400;
 	}
 	.offer {
@@ -760,8 +751,8 @@ body {
 			justify-content: center;
 		}
 		&__card {
-			height: 35rem;
 			width: 25rem;
+			height: 35rem;
 			&:nth-child(3) {
 				.offer__card-li {
 					margin-top: 0.5rem;
@@ -782,12 +773,12 @@ body {
 			margin-left: 3rem;
 		}
 		&__card-btn {
-			height: 3rem;
 			width: 17rem;
+			height: 3rem;
 			font-size: 1.5rem;
 			&--special {
-				height: 3rem;
 				width: 17rem;
+				height: 3rem;
 			}
 		}
 		&__more-btn {
@@ -811,8 +802,8 @@ body {
 		}
 		&__card {
 			margin: 2rem 2rem;
-			height: 30rem;
 			width: 60rem;
+			height: 30rem;
 			&-second-side {
 				&-title {
 					margin-bottom: 1rem;
@@ -842,9 +833,9 @@ body {
 				font-size: 2rem;
 			}
 			&-btn {
+				width: 20rem;
 				height: 4.5rem;
 				font-size: 1.8rem;
-				width: 20rem;
 			}
 		}
 	}
@@ -893,8 +884,8 @@ body {
 			margin-left: 1em;
 		}
 		&__img {
-			background-image: url("/dist/img/hero-big.jpg");
 			height: 40rem;
+			background-image: url("/dist/img/hero-big.jpg");
 		}
 		&__h3 {
 			font-size: 2.5rem;
@@ -925,8 +916,8 @@ body {
 		}
 	}
 	.second-hero__header {
-		font-size: 2.5em;
 		padding: 3rem 15rem;
+		font-size: 2.5em;
 	}
 	.second-hero__img {
 		background-image: url("/dist/img/seond-hero-big.jpg");
@@ -938,8 +929,8 @@ body {
 	}
 	.more-offer {
 		&__card {
-			height: 30rem;
 			width: 80rem;
+			height: 30rem;
 		}
 	}
 }
