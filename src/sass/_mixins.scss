@@ -1,0 +1,14 @@
+@mixin title {
+   	margin: 4rem 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: 3rem;
+}
+@mixin bg {
+    position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -5;
+}  

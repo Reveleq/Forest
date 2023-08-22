@@ -1,5 +1,6 @@
 @use "./colors" as *;
-
+@use "./components" as *;
+@use "./mixins" as *;
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -15,17 +16,19 @@ body {
 	background-color: $light;
 	font-size: 1.6rem;
 }
-.wrapper {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 1200px;
-}
+
 .nav {
 	display: none;
 	height: 8rem;
 	width: 100%;
 	justify-content: space-evenly;
 	background-color: $light;
+	z-index: 10;
+	&__btn {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
 	&__brand {
 		display: flex;
 		justify-content: center;
@@ -90,12 +93,12 @@ body {
 	&__title {
 		color: $dark;
 		text-decoration: none;
-		font-size: 3rem;
-		font-weight: 300;
+		font-size: 3.5rem;
+		font-weight: 400;
 	}
 	&__logo {
-		height: 2.6rem;
-		width: 2.6rem;
+		height: 2.9rem;
+		width: 2.9rem;
 	}
 	&__burger {
 		height: 4rem;
@@ -137,17 +140,6 @@ body {
 		background: none;
 	}
 }
-
-.active {
-	height: 18rem;
-}
-
-.animation-show {
-	animation: show 0.5s forwards;
-}
-.animation-hide {
-	animation: hide 0.5s forwards;
-}
 .hero-place {
 	padding-top: 8rem;
 	transition: padding 0.3s;
@@ -157,14 +149,10 @@ body {
 		background-image: url("/dist/img/hero-small.jpg");
 		background-size: cover;
 		background-position: center;
-		z-index: -1;
+		z-index: 0;
 	}
 	&__bg {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.7);
-		z-index: -11;
+		@include bg;
 	}
 	&__text {
 		position: absolute;
@@ -175,28 +163,19 @@ body {
 		z-index: 100;
 	}
 	&__h3 {
-		font-size: 1.3em;
+		font-size: 2.9rem;
 		font-weight: 300;
 	}
 	&__h1 {
-		font-size: 1.5em;
+		font-size: 3.2rem;
 	}
 }
-.active-hero {
-	padding-top: 26rem;
-}
-.shadow {
-	background-color: $footer;
-}
+
 .about-us {
 	width: 100%;
 	margin-bottom: 3em;
 	&__title {
-		margin: 4rem 0;
-		text-align: center;
-		text-transform: uppercase;
-		font-weight: 300;
-		font-size: 3rem;
+		@include title;
 	}
 	&__box {
 		display: flex;
@@ -208,7 +187,9 @@ body {
 		padding-bottom: 0.5em;
 	}
 	&__box-text {
-		margin: 0 2em 1em;
+		display: block;
+		max-width: 300px;
+		margin: 0 auto 1em;
 	}
 	&__img {
 		display: block;
@@ -227,11 +208,8 @@ body {
 		z-index: 0;
 	}
 	&__bg {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(7, 16, 7, 0.65);
-		z-index: -5;
+		@include bg;
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 	&__text {
 		height: 100%;
@@ -243,7 +221,7 @@ body {
 		color: $light;
 		text-align: center;
 		padding: 1.5rem 2rem;
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 		border: 1px solid $light;
 		font-weight: 400;
 		margin: 0 4rem;
@@ -251,15 +229,11 @@ body {
 }
 .offer {
 	&__title {
-		text-align: center;
-		margin: 4rem 0 2rem;
-		font-weight: 300;
-		font-size: 3rem;
-		text-transform: uppercase;
+		@include title;
 	}
 	&__p {
 		margin: 0 2rem 2rem;
-		font-size: 2rem;
+		font-size: 1.8rem;
 		text-align: center;
 	}
 	&__box {
@@ -298,7 +272,9 @@ body {
 		color: $unlist;
 	}
 	&__card-li {
-		margin: 0.5rem 5.5rem 0.5rem 5.5rem;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		margin-left: 5.5rem;
 	}
 	&__card-minus {
 		margin-right: 1rem;
@@ -325,7 +301,7 @@ body {
 			margin: 3rem auto 0;
 			height: 4rem;
 			width: 20rem;
-			font-size: 1.7rem;
+			font-size: 1.5rem;
 			background-color: $check;
 			border: none;
 			border-radius: 5px;
@@ -353,6 +329,7 @@ body {
 		color: $light;
 		text-align: center;
 		line-height: 4rem;
+		text-decoration: none;
 		border: none;
 		border-radius: 5px;
 		box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
@@ -374,11 +351,7 @@ body {
 		padding: 0 3.5em;
 	}
 	&__title {
-		text-align: center;
-		margin: 4rem 0 2rem;
-		font-weight: 300;
-		font-size: 2.5rem;
-		text-transform: uppercase;
+		@include title;
 	}
 	&__form {
 		display: flex;
@@ -454,11 +427,7 @@ body {
 }
 .more-offer {
 	&__title {
-		text-align: center;
-		margin: 4rem 0 2rem;
-		font-weight: 300;
-		font-size: 2.5rem;
-		text-transform: uppercase;
+		@include title;
 	}
 	&__box {
 		display: flex;
@@ -557,7 +526,7 @@ body {
 			align-items: center;
 			width: 100%;
 			height: 40%;
-			background-image: url("/dist/img/trees-3822149_640.jpg");
+
 			background-position: center;
 			z-index: 0;
 		}
@@ -573,15 +542,11 @@ body {
 			line-height: 3rem;
 		}
 		&-bg {
-			position: absolute;
-			width: 100%;
-			height: 100%;
+			@include bg;
 			background-color: rgba(0, 0, 0, 0.5);
-			z-index: -1;
 		}
 		&-ul {
 			margin: 0;
-
 			font-size: 2rem;
 			list-style: none;
 		}
@@ -599,7 +564,7 @@ body {
 			border: none;
 			background-color: $light;
 			border-radius: 5px;
-			transition: background-color .3s, color .3s;
+			transition: background-color 0.3s, color 0.3s;
 			cursor: pointer;
 			&:hover {
 				background-color: $dark;
@@ -607,6 +572,21 @@ body {
 			}
 		}
 	}
+}
+.img-one {
+	background-image: url("/dist/img/more-offer-one.jpg");
+}
+.img-two {
+	background-image: url("/dist/img/twoV2-more-offer.jpg");
+}
+.img-three {
+	background-image: url("/dist/img/three-more-offer.jpg");
+}
+.img-four {
+	background-image: url("/dist/img/four-more-offer.jpg");
+}
+.img-five {
+	background-image: url("/dist/img/five-more-offer.jpg");
 }
 .footer {
 	margin: 0;
@@ -620,12 +600,13 @@ body {
 		margin-bottom: 3rem;
 		&-brand {
 			display: flex;
+			align-items: center;
 			margin-top: 0.8em;
 
-			font-size: 4rem;
-			font-weight: 300;
+			font-size: 3rem;
+			font-weight: 400;
 			img {
-				height: 4rem;
+				height: 2.5rem;
 			}
 		}
 	}
@@ -678,8 +659,25 @@ body {
 		font-weight: 300;
 	}
 }
-
+.active {
+	height: 17.5rem;
+}
+.active-hero {
+	padding-top: 25.5rem;
+}
+.shadow {
+	background-color: $footer;
+}
 @media (min-width: 768px) {
+	html {
+		scroll-padding-top: 43rem;
+	}
+	.active {
+		height: 27rem;
+	}
+	.active-hero {
+		padding-top: 38rem;
+	}
 	.mobile-nav {
 		height: 11rem;
 
@@ -720,13 +718,15 @@ body {
 			justify-content: center;
 			align-items: center;
 		}
+		&__text {
+			padding-top: 0.3rem;
+			padding-left: 1.6em;
+		}
 		&__box-header {
 			font-size: 2rem;
-			margin-left: 1.6em;
 		}
 
 		&__box-text {
-			margin: 0 2em 1em;
 			font-size: 1.6rem;
 		}
 		&__text {
@@ -738,7 +738,7 @@ body {
 		&__img {
 			display: inline-block;
 			margin-left: 1em;
-			height: 20rem;
+			height: 30rem;
 			margin: 0 auto;
 		}
 	}
@@ -758,7 +758,9 @@ body {
 			width: 25rem;
 			&:nth-child(3) {
 				.offer__card-li {
-					margin: 0.5rem 5rem 0.5rem 5rem;
+					margin-top: 0.5rem;
+					margin-bottom: 0.5rem;
+					margin-left: 4rem;
 				}
 			}
 		}
@@ -769,7 +771,9 @@ body {
 			font-size: 3rem;
 		}
 		&__card-li {
-			margin: 0.5rem 4rem 0.5rem 4rem;
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+			margin-left: 3rem;
 		}
 		&__card-btn {
 			height: 3rem;
@@ -796,53 +800,48 @@ body {
 		}
 	}
 	.more-offer {
-	&__title {
-		font-size: 3rem;
-	
-	}
-	&__card {
-		margin: 2rem 2rem;
-		height: 30rem;
-		width: 60rem;
-		&-second-side {
-
-			&-title {
-				margin-bottom: 1rem;
-			}
-		
-			&-btn {
-				font-size: 2rem;
-				
-			}
-		}
-		&-title {
+		&__title {
 			font-size: 3rem;
 		}
-		&-price {
-			font-size: 4.5rem;
-		}
-		&-img {
-			width: 40%;
-			height: 100%;
-			
-		}
-		&-ul-box {
-			right: 0;
-			width: 60%;
-			height: 100%;
-			line-height: 3.5rem;
-		}
-		&-li {
-			font-size: 2rem;
-		}
-		&-btn {
-			height: 4.5rem;
-			font-size: 1.8rem;
-			width: 20rem;
-		
+		&__card {
+			margin: 2rem 2rem;
+			height: 30rem;
+			width: 60rem;
+			&-second-side {
+				&-title {
+					margin-bottom: 1rem;
+				}
+
+				&-btn {
+					font-size: 2rem;
+				}
+			}
+			&-title {
+				font-size: 3rem;
+			}
+			&-price {
+				font-size: 4.5rem;
+			}
+			&-img {
+				width: 40%;
+				height: 100%;
+			}
+			&-ul-box {
+				right: 0;
+				width: 60%;
+				height: 100%;
+				line-height: 3.5rem;
+			}
+			&-li {
+				font-size: 2rem;
+			}
+			&-btn {
+				height: 4.5rem;
+				font-size: 1.8rem;
+				width: 20rem;
+			}
 		}
 	}
-}
 	.footer {
 		&__box {
 			flex-direction: row;
@@ -854,6 +853,9 @@ body {
 }
 
 @media (min-width: 992px) {
+	html {
+		scroll-padding-top: 9rem;
+	}
 	.mobile-nav {
 		display: none;
 	}
@@ -886,7 +888,8 @@ body {
 
 		&__box-header {
 			font-size: 2.5rem;
-		}}
+		}
+	}
 	.hero-place {
 		&__text {
 			left: 45%;
@@ -936,6 +939,19 @@ body {
 	.offer {
 		&__more-btn {
 			width: 87rem;
+		}
+	}
+	.more-offer {
+		&__card {
+			height: 30rem;
+			width: 80rem;
+		}
+	}
+}
+@media (min-width: 1100px) {
+	.more-offer {
+		&__card {
+			width: 100rem;
 		}
 	}
 }

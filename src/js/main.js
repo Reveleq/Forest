@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const navLinks = document.querySelector(".mobile-nav__links");
 	const heroPlace = document.querySelector(".hero-place");
 	const mobileNav = document.querySelector(".mobile-nav");
-
+	const nav = document.querySelector(".nav");
 	const showLinks = () => {
 		navLinks.classList.toggle("active");
 		heroPlace.classList.toggle("active-hero");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		})
 	);
 	const addShadow = () => {
-		if (window.scrollY >= 350) {
+		if (window.scrollY >= 320) {
 			mobileNav.classList.add("shadow");
 			navLinks.classList.add("shadow");
 		} else {
