@@ -21,10 +21,9 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-kit": "^0.3.0",
     "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-sass": "^5.1.0",
     "sass": "^1.49.7"
-  },
-  "dependencies": {}
+  }
 }
