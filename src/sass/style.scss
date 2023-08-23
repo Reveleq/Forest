@@ -444,6 +444,14 @@ body {
 		border-radius: 15px;
 		background-color: $footer;
 		overflow: hidden;
+		&-minus {
+			margin-right: 1rem;
+			height: 1.5rem;
+		}
+		&-check {
+			margin-right: 1.5rem;
+			height: 1.5rem;
+		}
 		&-first-side {
 			transition: 0.5s;
 		}
@@ -663,6 +671,9 @@ body {
 }
 .dark-color{
 	background-color: $dark;
+}
+.unlist{
+	color: $unlist;
 }
 @media (min-width: 768px) {
 	html {
