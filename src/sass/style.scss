@@ -16,19 +16,22 @@ body {
 	font-size: 1.6rem;
 	background-color: $light;
 }
-
 .nav {
 	display: none;
 	justify-content: space-evenly;
 	height: 8rem;
 	width: 100%;
 	background-color: $light;
-	transition: background-color .3s;
+	transition: background-color 0.3s;
 	z-index: 10;
 	&__btn {
 		display: flex;
 		align-items: center;
 		text-decoration: none;
+		&:focus {
+			outline: none;
+			background-color: $outline;
+		}
 	}
 	&__brand {
 		display: flex;
@@ -60,6 +63,11 @@ body {
 			color: $light;
 			background-color: $dark;
 		}
+		&:focus {
+			outline: none;
+			color: $light;
+			background-color: $dark;
+		}
 	}
 }
 .mobile-nav {
@@ -73,6 +81,10 @@ body {
 		display: flex;
 		align-items: center;
 		text-decoration: none;
+		&:focus {
+			outline: none;
+			background-color: $outline;
+		}
 	}
 	&__panel {
 		display: flex;
@@ -110,6 +122,7 @@ body {
 		&:hover {
 			transform: scale(0.9);
 		}
+		
 	}
 
 	&__links {
@@ -136,10 +149,20 @@ body {
 			background-color: $dark;
 			color: $light;
 		}
+		&:focus {
+			outline: none;
+			color: $light;
+			background-color: $dark;
+			border-radius: 10px;
+		}
 	}
 	&__button {
 		border: none;
 		background: none;
+		&:focus {
+			outline: none;
+			background-color: $outline;
+		}
 	}
 }
 .hero-place {
@@ -294,27 +317,38 @@ body {
 			transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 			cursor: pointer;
 			&--special {
-			display: block;
-			margin: 3rem auto 0;
-			width: 20rem;
-			height: 4rem;
-			font-size: 1.7rem;
-			color: $dark;
-			background-color: $check;
-			border: none;
-			border-radius: 5px;
-			box-shadow: 0px 5px 17px 0px rgba(49, 203, 83, 1);
-			transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-			cursor: pointer;
+				display: block;
+				margin: 3rem auto 0;
+				width: 20rem;
+				height: 4rem;
+				font-size: 1.7rem;
+				color: $dark;
+				background-color: $check;
+				border: none;
+				border-radius: 5px;
+				box-shadow: 0px 5px 17px 0px rgba(49, 203, 83, 1);
+				transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+				cursor: pointer;
 				&:hover {
 					background-color: $dark;
 					color: $light;
+					box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
+				}
+				&:focus {
+					outline: none;
+					color: $light;
+					background-color: $dark;
 					box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
 				}
 			}
 			&:hover {
 				background-color: $dark;
 				color: $light;
+			}
+			&:focus {
+				outline: none;
+				color: $light;
+				background-color: $dark;
 			}
 		}
 	}
@@ -339,6 +373,11 @@ body {
 			background-color: $light;
 			color: $dark;
 			box-shadow: 0px 5px 17px 0px rgb(125, 125, 128);
+		}
+		&:focus {
+			outline: none;
+			color: $dark;
+			background-color: $light;
 		}
 	}
 }
@@ -502,6 +541,11 @@ body {
 					background-color: $dark;
 					color: $light;
 				}
+				&:focus {
+			outline: none;
+			color: $light;
+			background-color: $dark;		
+		}
 			}
 		}
 		.second-side-show {
@@ -576,24 +620,29 @@ body {
 				background-color: $dark;
 				color: $light;
 			}
+			&:focus {
+			outline: none;
+			color: $light;
+			background-color: $dark;		
+		}
 		}
 	}
 }
-.img-one {
-	background-image: url("../dist/img/more-offer-one.jpg");
-}
-.img-two {
-	background-image: url("../dist/img/twoV2-more-offer.jpg");
-}
-.img-three {
-	background-image: url("../dist/img/three-more-offer.jpg");
-}
-.img-four {
-	background-image: url("../dist/img/four-more-offer.jpg");
-}
-.img-five {
-	background-image: url("../dist/img/five-more-offer.jpg");
-}
+// .img-one {
+// 	background-image: url("../dist/img/more-offer-one.jpg");
+// }
+// .img-two {
+// 	background-image: url("../dist/img/twoV2-more-offer.jpg");
+// }
+// .img-three {
+// 	background-image: url("../dist/img/three-more-offer.jpg");
+// }
+// .img-four {
+// 	background-image: url("../dist/img/four-more-offer.jpg");
+// }
+// .img-five {
+// 	background-image: url("../dist/img/five-more-offer.jpg");
+// }
 .footer {
 	margin: 0;
 	background-color: $footer;
@@ -604,7 +653,7 @@ body {
 		justify-content: space-evenly;
 		align-items: center;
 		margin-bottom: 3rem;
-		&-logo{
+		&-logo {
 			height: 3rem;
 		}
 		&-brand {
@@ -613,12 +662,11 @@ body {
 			margin-top: 0.8em;
 			font-size: 3.6rem;
 			font-weight: 400;
-			
 		}
 	}
-	&__border{
+	&__border {
 		width: 100%;
-		height: .1rem;
+		height: 0.1rem;
 		background-color: $dark;
 	}
 	&__links {
@@ -646,10 +694,14 @@ body {
 		color: $dark;
 		text-decoration: none;
 		text-align: center;
-		transition: color .3s;
+		transition: color 0.3s;
 		cursor: pointer;
-		&:hover{
+		&:hover {
 			color: $unlist;
+		}
+		&:focus {
+			outline: none;				
+			color: $unlist;		
 		}
 	}
 	&__year {
@@ -669,10 +721,10 @@ body {
 .shadow {
 	background-color: $footer;
 }
-.dark-color{
+.dark-color {
 	background-color: $dark;
 }
-.unlist{
+.unlist {
 	color: $unlist;
 }
 @media (min-width: 768px) {
@@ -728,7 +780,6 @@ body {
 		&__text {
 			padding-top: 0.3rem;
 			padding-left: 1.6em;
-			
 		}
 		&__box-header {
 			font-size: 2rem;
@@ -853,27 +904,25 @@ body {
 	.footer {
 		&__box {
 			flex-direction: row;
-			&-logo{
+			&-logo {
 				height: 4.6rem;
-				margin-right: .59rem;
+				margin-right: 0.59rem;
 			}
-			&-brand{
+			&-brand {
 				font-size: 4.1rem;
 			}
-
 		}
 		&__links {
 			flex-direction: row;
-			&-category{
-			align-items: flex-start;
+			&-category {
+				align-items: flex-start;
 			}
 		}
-		
 	}
 }
-@media (min-width: 820px){
-	.about-us{
-		&__img{
+@media (min-width: 820px) {
+	.about-us {
+		&__img {
 			height: 30rem;
 		}
 	}
@@ -896,7 +945,7 @@ body {
 		}
 		&__img {
 			height: 40rem;
-			background-image: url("../dist/img/hero-big.jpg");
+			background-image: url(../dist/img/hero-big.jpg);
 		}
 		&__h3 {
 			font-size: 2.5rem;
@@ -922,7 +971,7 @@ body {
 			line-height: 1.5em;
 		}
 		&__img {
-			padding-top: 1rem; 
+			padding-top: 1rem;
 			height: 35rem;
 		}
 	}
