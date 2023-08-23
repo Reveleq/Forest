@@ -171,7 +171,7 @@ body {
 	&__img {
 		@include hero-img;
 		height: 35rem;
-		background-image: url(".../dist/img/hero-small.jpg");
+		// background-image: url(".../dist/img/hero-small.jpg");
 	}
 	&__bg {
 		@include bg;
@@ -224,7 +224,7 @@ body {
 	&__img {
 		@include hero-img;
 		height: 30rem;
-		background-image: url(".../dist/img/second-hero-small.jpg");
+		// background-image: url(".../dist/img/second-hero-small.jpg");
 		z-index: 0;
 	}
 	&__bg {
@@ -945,7 +945,7 @@ body {
 		}
 		&__img {
 			height: 40rem;
-			background-image: url(../dist/img/hero-big.jpg);
+			// background-image: url(../dist/img/hero-big.jpg);
 		}
 		&__h3 {
 			font-size: 2.5rem;
@@ -980,7 +980,7 @@ body {
 		font-size: 2.5em;
 	}
 	.second-hero__img {
-		background-image: url("../dist/img/seond-hero-big.jpg");
+		// background-image: url("../dist/img/seond-hero-big.jpg");
 	}
 	.offer {
 		&__more-btn {
