@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const burgerBtn = document.querySelector(".mobile-nav__button");
 	const allNavItems = document.querySelectorAll(".mobile-nav__link");
 	const navLinks = document.querySelector(".mobile-nav__links");
+	const closeBtn = document.querySelector('.close')
 	const secondNavLinks = document.querySelector('.nav__links')
 	const heroPlace = document.querySelector(".hero-place");
 	const mobileNav = document.querySelector(".mobile-nav");
@@ -26,9 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}	
 	const showLinks = () => {
+		burgerBtn.classList.add('hide')
+		setTimeout( () => {
+burgerBtn.classList.remove('hide')
+		}, 300)
 		navLinks.classList.toggle("active");
-		heroPlace.classList.toggle("active-hero");
 	};
+	const closeLinks = () => {
+		closeBtn.classList.add('hide')
+		setTimeout( () => {
+closeBtn.classList.remove('hide')
+		}, 300)
+		navLinks.classList.remove('active')
+	}
 	allNavItems.forEach((e) =>
 		e.addEventListener("click", () => {
 			navLinks.classList.remove("active");
@@ -37,4 +48,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	);
 	window.addEventListener('scroll', checkNav)
 	burgerBtn.addEventListener("click", showLinks);
+	closeBtn.addEventListener('click', closeLinks )
 });
