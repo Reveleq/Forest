@@ -36,7 +36,13 @@
 			nameInput.classList.add("error");
 		   nameError.classList.add('show-alert')
 			nameError.textContent = "Musisz uzupełnić pole!";
-      } else {
+      } else if(nameInput.value.trim() === ''){
+		nameInput.value = ''
+		nameInput.classList.add("error");
+		nameError.classList.add('show-alert')
+		 nameError.textContent = "Musisz uzupełnić pole!";
+	  }
+	  else {
 			nameInput.classList.remove("error");
          nameError.classList.remove('show-alert')
 			nameError.textContent = "";
@@ -48,7 +54,7 @@
 			emailError.textContent = "Musisz uzupełnić pole!";
 		   emailError.classList.add('show-alert')
       } 
-      else {
+	  else {
 			emailInput.classList.remove("error");
 			emailError.textContent = "";
           emailError.classList.remove('show-alert')
@@ -74,7 +80,12 @@
 			msgInput.classList.add("error");
 			msgError.textContent = "Musisz uzupełnić pole!";
 		   msgError.classList.add("show-alert")
-      } else {
+      }else if(msgInput.value.trim() === ''){
+		msgInput.value = ''
+		msgInput.classList.add("error");
+		msgError.textContent = "Musisz uzupełnić pole!";
+	   msgError.classList.add("show-alert")
+	  } else {
 			msgInput.classList.remove("error");
 			msgError.textContent = "";
          msgError.classList.remove('show-alert')
